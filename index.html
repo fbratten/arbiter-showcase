@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arbiter - MCP Server Validator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; min-height: 100vh; line-height: 1.6; }
+        .hero { text-align: center; padding: 4rem 2rem 3rem; background: linear-gradient(135deg, #0f3443 0%, #0f172a 100%); }
+        .hero h1 { font-size: 3rem; color: #2dd4bf; margin-bottom: 0.5rem; }
+        .hero .version { display: inline-block; background: #0d948433; color: #2dd4bf; padding: 0.2rem 0.8rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 1rem; }
+        .hero .tagline { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 2rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .section { padding: 2.5rem 0; border-bottom: 1px solid #1e293b; }
+        .section:last-child { border-bottom: none; }
+        .section h2 { font-size: 1.5rem; color: #5eead4; margin-bottom: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.2rem; }
+        .card { background: #1e293b; border-radius: 10px; padding: 1.5rem; border: 1px solid #334155; transition: border-color 0.2s; }
+        .card:hover { border-color: #2dd4bf; }
+        .card h3 { color: #5eead4; font-size: 1.05rem; margin-bottom: 0.5rem; }
+        .card p { color: #94a3b8; font-size: 0.95rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.7rem 1rem; border-bottom: 1px solid #1e293b; }
+        th { color: #2dd4bf; font-size: 0.9rem; text-transform: uppercase; }
+        td { color: #cbd5e1; }
+        code { background: #1e293b; color: #5eead4; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9rem; }
+        .btn { display: inline-block; background: #0d9484; color: white; padding: 0.7rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.2s; margin: 0.3rem; }
+        .btn:hover { background: #0f766e; }
+        .btn-outline { background: transparent; border: 2px solid #0d9484; color: #2dd4bf; }
+        .btn-outline:hover { background: #0d948433; }
+        .links { text-align: center; margin: 2rem 0; }
+        footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.85rem; }
+        footer a { color: #0d9484; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        @media (max-width: 600px) { .hero h1 { font-size: 2rem; } .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>arbiter</h1>
+        <span class="version">v0.1.0</span>
+        <p class="tagline">MCP Server Validator - protocol compliance, code quality, best practices, and LLM ergonomics</p>
+        <div class="links">
+            <a href="https://github.com/fbratten/arbiter" class="btn">Source Code</a>
+            <a href="https://github.com/fbratten/arbiter#quick-start" class="btn btn-outline">Quick Start</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>What does arbiter check?</h2>
+            <div class="grid">
+                <div class="card"><h3>Protocol Compliance</h3><p>JSON-RPC 2.0 handshake, capability negotiation, transport validation</p></div>
+                <div class="card"><h3>Tool Quality</h3><p>Schema completeness, description quality, parameter validation</p></div>
+                <div class="card"><h3>Error Handling</h3><p>Graceful failures, error codes, recovery behavior</p></div>
+                <div class="card"><h3>Security</h3><p>Input validation, injection resistance, secret exposure</p></div>
+                <div class="card"><h3>LLM Ergonomics</h3><p>Tool naming, description clarity, schema usability for AI agents</p></div>
+                <div class="card"><h3>Host Compatibility</h3><p>Desktop app config, environment startup, inspector support</p></div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Validation Profiles</h2>
+            <table>
+                <tr><th>Profile</th><th>Threshold</th><th>Use Case</th></tr>
+                <tr><td><code>lenient</code></td><td>50%</td><td>Early development, quick feedback</td></tr>
+                <tr><td><code>standard</code></td><td>70%</td><td>Most servers (default)</td></tr>
+                <tr><td><code>strict</code></td><td>85%</td><td>Production-ready validation</td></tr>
+                <tr><td><code>paranoid</code></td><td>95%</td><td>Maximum compliance</td></tr>
+            </table>
+        </div>
+        <div class="section">
+            <h2>Fix Packs</h2>
+            <p style="color:#94a3b8">When validation fails, arbiter provides actionable remediation grouped into fix packs:</p>
+            <table>
+                <tr><th>Pack</th><th>Focus</th></tr>
+                <tr><td><code>docs_baseline</code></td><td>Documentation completeness</td></tr>
+                <tr><td><code>schema_hardening</code></td><td>Tool schema quality</td></tr>
+                <tr><td><code>error_hygiene</code></td><td>Error handling patterns</td></tr>
+                <tr><td><code>security_baseline</code></td><td>Security fundamentals</td></tr>
+                <tr><td><code>llm_polish</code></td><td>LLM ergonomics</td></tr>
+                <tr><td><code>lifecycle_compliance</code></td><td>MCP lifecycle</td></tr>
+                <tr><td><code>transport_hardening</code></td><td>Transport layer</td></tr>
+            </table>
+        </div>
+        <div class="section" style="text-align:center">
+            <h2>Get Involved</h2>
+            <p style="margin-bottom:1.5rem;color:#94a3b8">arbiter is open source under the MIT license.</p>
+            <a href="https://github.com/fbratten/arbiter" class="btn">View on GitHub</a>
+            <a href="https://github.com/fbratten/arbiter/issues" class="btn btn-outline">Report Issue</a>
+        </div>
+    </div>
+    <footer>Built by <a href="https://github.com/fbratten">Fredrik Bratten</a> | <a href="https://adaptivearts.ai">AdaptiveArts.ai</a> | MIT License</footer>
+</body>
+</html>
